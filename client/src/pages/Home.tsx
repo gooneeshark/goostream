@@ -20,6 +20,11 @@ export default function Home() {
   const [viewerCount, setViewerCount] = useState(() => Math.floor(Math.random() * 200) + 50);
   const [liveTime, setLiveTime] = useState(0);
 
+  // Set SEO document title
+  useEffect(() => {
+    document.title = "Goonee' Live Stream \u2014 Interactive Music Showcase";
+  }, []);
+
   // Simulate live timer
   useEffect(() => {
     const interval = setInterval(() => setLiveTime((p) => p + 1), 1000);
@@ -175,7 +180,7 @@ export default function Home() {
           {/* Bottom Banner */}
           <div className="mt-3 relative rounded-lg overflow-hidden"
             style={{ height: "70px", border: "1px solid rgba(255,20,147,0.12)", boxShadow: "0 0 20px rgba(255,20,147,0.05)" }}>
-            <img src={IMAGES.equalizerBanner} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+            <img src={IMAGES.equalizerBanner} alt="Neon equalizer banner background for Goonee' music stream" className="absolute inset-0 w-full h-full object-cover opacity-30" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, #050510 0%, transparent 30%, transparent 70%, #050510 100%)" }} />
             <div className="relative z-10 h-full flex items-center justify-center">
               <div className="text-center">
